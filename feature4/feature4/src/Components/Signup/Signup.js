@@ -1,7 +1,7 @@
 export default function Signup() {
     return (
       <section>
-        <h1> Sign up and create a Study Buddy account below:</h1>
+        <h1> Create a Study Buddy account below:</h1>
         <div className="form">
           <form>
             <label for="fname">First name:</label>

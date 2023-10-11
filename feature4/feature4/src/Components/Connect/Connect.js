@@ -1,7 +1,7 @@
 export default function Connect() {
     return (
       <section>
-        <h1> Welcome to Connect Components </h1>
+        <h1> Connect with other students </h1>
         <p> This is the connect component </p>
       </section>
     );

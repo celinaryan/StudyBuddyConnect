@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./Main/Main.js";
+// import Main from "./Main/Main.js";
 import Home from "./Home/Home.js";
 import About from "./About/About.js";
 import Header from "./Header/Header.js";

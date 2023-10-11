@@ -4,7 +4,7 @@ const Header = () => (
   // using () instead of {} here because we are returning one line
   <header>
     <nav>
-      <ul>
+      <ul className="navigation">
         <li>
           <Link to="/">Home</Link>
         </li>

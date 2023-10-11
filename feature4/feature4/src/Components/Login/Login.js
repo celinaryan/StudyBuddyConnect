@@ -10,6 +10,7 @@ export default function Login() {
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" />
             <br />
+            <input type="submit" value="Log in" />
           </form>
         </div>
       </section>
