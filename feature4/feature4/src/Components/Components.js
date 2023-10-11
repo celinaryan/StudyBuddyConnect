@@ -1,7 +1,6 @@
 import React from "react";
 // import Main from "./Main/Main.js";
 import Home from "./Home/Home.js";
-import About from "./About/About.js";
 import Header from "./Header/Header.js";
 import Login from "./Login/Login.js";
 import Signup from "./Signup/Signup.js";
@@ -16,7 +15,6 @@ const Components = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/connect" element={<Connect />} />
