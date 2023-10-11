@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+
 // Link makes it buttery smooth
 const Header = () => (
   // using () instead of {} here because we are returning one line
   <header>
+    <div class="nav-bar-container">
     <nav>
       <ul className="navigation">
         <li>
@@ -22,6 +24,7 @@ const Header = () => (
         </li>
       </ul>
     </nav>
+    </div>
   </header>
 );
 
