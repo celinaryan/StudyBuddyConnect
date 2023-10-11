@@ -163,3 +163,10 @@ body {
     border-bottom: none;
   }
 }
+
+/* centering images */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
