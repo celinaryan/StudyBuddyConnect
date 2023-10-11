@@ -170,3 +170,7 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.centerText {
+  padding: 70px;
+}

@@ -1,6 +1,7 @@
 export default function Login() {
     return (
       <section>
+        <div className="centerText">
         <h1>Login to your Study Buddy account below:</h1>
         <div className="form">
           <form>
@@ -12,6 +13,7 @@ export default function Login() {
             <br />
             <input type="submit" value="Log in" />
           </form>
+        </div>
         </div>
       </section>
     );

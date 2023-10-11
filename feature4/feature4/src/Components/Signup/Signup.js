@@ -1,6 +1,7 @@
 export default function Signup() {
     return (
       <section>
+        <div className="centerText">
         <h1> Create a Study Buddy account below:</h1>
         <div className="form">
           <form>
@@ -35,6 +36,7 @@ export default function Signup() {
             <br />
             <input type="submit" value="Register" />
           </form>
+        </div>
         </div>
       </section>
     );
