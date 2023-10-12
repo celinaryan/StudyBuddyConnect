@@ -29,7 +29,7 @@ const MainList = () => {
             {lessons.map((lesson) => (
               <li key={lesson.id}>
                 {" "}
-                {lesson.id} | {lesson.get("ClassName")}{" "}
+                {lesson.id} | {lesson.get("ClassName").slice(1,-1)}{" "}
               </li>
             ))}
           </ul>
