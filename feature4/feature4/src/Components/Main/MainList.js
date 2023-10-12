@@ -1,31 +1,44 @@
 import { useEffect, useState } from "react";
 import { getAllLessons, Lessons } from "../../Services/LearnService";
 
-
 /* STATEFUL PARENT COMPONENT */
-const MainList = ({ lessons }) => {
-    return (
+const MainList = () => {
+  const [lessons, setLessons] = useState([]);
+
+  useEffect(() => {
+    // Fetch lessons or populate lessons state here
+    // For example, using the getAllLessons function
+    getAllLessons()
+      .then((lessonsData) => {
+        setLessons(lessonsData);
+      })
+      .catch((error) => {
+        console.error("Error fetching lessons: ", error);
+      });
+  }, []);
+
+  return (
+    <div>
+      <hr />
+      Data in our database: this is the main list stateless child component.
       <div>
-        <hr />
-        This is the main list stateless child component.
-        <div>
-          <p> Lesson by ID: </p>
-          {/* Check that the lesson object exists */}
-          {lessons.length > 0 && (
-            <ul>
-              {/* Using getter for lesson Object to display name */}
-              {lessons.map((lesson) => (
-                <li key={lesson.id}>
-                  {" "}
-                  {lesson.id} | {lesson.get("ClassName")}{" "}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>{" "}
+        <p> Classes: </p>
+        {/* Check that the lessons array exists and has a length greater than 0 */}
+        {lessons.length > 0 ? (
+          <ul>
+            {lessons.map((lesson) => (
+              <li key={lesson.id}>
+                {" "}
+                {lesson.id} | {lesson.get("ClassName")}{" "}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No classes available.</p>
+        )}
       </div>
-    );
-  };
-  
-  export default MainList;
-  
+    </div>
+  );
+};
+
+export default MainList;

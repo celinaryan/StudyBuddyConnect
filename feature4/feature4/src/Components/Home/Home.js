@@ -1,4 +1,6 @@
 import studentImg from '../images/studentsStudying.jpeg';
+import MainList from '../Main/MainList';
+
 export default function Home() {
     return (
       <section>
@@ -12,6 +14,8 @@ export default function Home() {
       </div>
       
     
-      </section>
+      
+        <MainList/>
+        </section>
     );
   }

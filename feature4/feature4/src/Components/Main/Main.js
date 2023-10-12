@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MainList from "./MainList.js";
-import { getAllLessons, Lessons } from "../../Services/LearnService";
+import UserList from "./UserList";
+import { getAllLessons, Lessons,getAllUsers,Users } from "../../Services/LearnService";
 
 
 const Main = () => {
@@ -26,6 +27,7 @@ const Main = () => {
     <div>
       This is the main stateful parent component.
       <MainList lessons={lessons} />
+      <UserList users={Users} />
     </div>
   );
 };
