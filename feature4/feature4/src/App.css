@@ -133,6 +133,10 @@ body {
   padding: 1em;
   color: white;
 }
+.db-list div,p,ul,h1{
+  margin: 10px 10px;
+
+}
 
 img {
   display: block;

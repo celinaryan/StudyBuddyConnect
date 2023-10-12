@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { getAllUsers, Users } from "../../Services/LearnService";
+import { getAllUsers, Users } from "../../Services/UserService";
 
 /* STATEFUL PARENT COMPONENT */
-const MainList = () => {
+const UserList = () => {
   const [users, setUsers] = useState([]);
-
   useEffect(() => {
     // Fetch lessons or populate lessons state here
     // For example, using the getAllLessons function
@@ -29,7 +28,7 @@ const MainList = () => {
             {users.map((user) => (
               <li key={user.id}>
                 {" "}
-                {user.id} | {user.get("firstName")}{" "}
+                {user.get("firstName").slice(1,-1)} {user.get("lastName").slice(1,-1)}{" | School: "} {user.get("university").slice(1,-1)}{" | Year: "}{user.get("classYear").slice(1,-1)}{" | Major: "} {user.get("major").slice(1,-1)}{" "}
               </li>
             ))}
           </ul>

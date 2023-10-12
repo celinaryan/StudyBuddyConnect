@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MainList from "./MainList.js";
-import UserList from "./UserList";
-import { getAllLessons, Lessons,getAllUsers,Users } from "../../Services/LearnService";
+import { getAllLessons, Lessons} from "../../Services/LearnService";
+
 
 
 const Main = () => {
@@ -9,7 +9,6 @@ const Main = () => {
   // console.log("data: ", data);
   // Variables in the state to hold data
   const [lessons, setLessons] = useState([]);
-
   // UseEffect to run when the page loads to
   // obtain async data and render
   useEffect(() => {
@@ -25,9 +24,11 @@ const Main = () => {
 
   return (
     <div>
-      This is the main stateful parent component.
-      <MainList lessons={lessons} />
-      <UserList users={Users} />
+      
+      <div className="db-list">
+      <h1>This is the main stateful parent component.</h1>
+        <MainList lessons={lessons} />
+      </div>
     </div>
   );
 };

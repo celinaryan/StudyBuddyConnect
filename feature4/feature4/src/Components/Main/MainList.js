@@ -20,7 +20,7 @@ const MainList = () => {
   return (
     <div>
       <hr />
-      Data in our database: this is the main list stateless child component.
+      <h2>Data in our database: this is the main list stateless child component.</h2>
       <div>
         <p> Classes: </p>
         {/* Check that the lessons array exists and has a length greater than 0 */}
