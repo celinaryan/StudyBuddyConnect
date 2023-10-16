@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
-import UserList from "../Main/UserList.js";
-import { getAllUsers, Users} from "../../Services/UserService";
+import ReqList from "../Main/ReqList.js";
+import { getAllRequests, Requests} from "../../Services/RequestService";
 
   const Connect = () => {
     // const data = useFetch("https://jsonplaceholder.typicode.com/todos/");
      // console.log("data: ", data);
      // Variables in the state to hold data
-     const [users, setUsers] = useState([]);
+     const [reqs, setReqs] = useState([]);
      // UseEffect to run when the page loads to
      // obtain async data and render
      useEffect(() => {
-       if (Users.collection.length) {
-         setUsers(Users.collection);
+       if (Requests.collection.length) {
+         setReqs(Requests.collection);
        } else {
-         getAllUsers().then((users) => {
-           console.log(users);
-           setUsers(users);
+         getAllRequests().then((reqs) => {
+           console.log(reqs);
+           setReqs(reqs);
          });
        }
      }, []);
@@ -28,7 +28,8 @@ import { getAllUsers, Users} from "../../Services/UserService";
         <p> This is the connect component </p>
         </div>
         <div className="db-list">
-        <UserList users={users} />
+        <ReqList reqs={reqs} />
+        <p> Matches coming soon.... </p>
         </div>
         
       </section>
