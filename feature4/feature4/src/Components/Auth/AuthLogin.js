@@ -9,7 +9,7 @@ const AuthLogin = () => {
   // redirect already authenticated users back to home
   // new user object only has two properties
   const [currentUser, setCurrentUser] = useState({
-    email: "",
+    username: "",
     password: ""
   });
 
