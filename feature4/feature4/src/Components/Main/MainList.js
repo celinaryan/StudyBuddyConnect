@@ -20,16 +20,16 @@ const MainList = () => {
   return (
     <div>
       <hr />
-      <h2>Data in our database: this is the main list stateless child component.</h2>
+      <h2>Classes you can find a buddy for:</h2>
       <div>
-        <p> Classes: </p>
+        <p> Don't see the class you need help with? You can always add a new one! </p>
         {/* Check that the lessons array exists and has a length greater than 0 */}
         {lessons.length > 0 ? (
           <ul>
             {lessons.map((lesson) => (
               <li key={lesson.id}>
                 {" "}
-                {lesson.id} | {lesson.get("ClassName").slice(1,-1)}{" "}
+                {lesson.get("ClassName").slice(1,-1)}{" "}
               </li>
             ))}
           </ul>

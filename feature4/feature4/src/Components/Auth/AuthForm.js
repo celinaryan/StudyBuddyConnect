@@ -1,12 +1,12 @@
 import React from "react";
-
+import "../../form_styles.css"
 const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
 
   return (
     <form onSubmit={onSubmit} autoComplete="off">
-     <div>
+     <div className= "auth-form">
         <div className="form-group">
-          <label>Username:</label>
+        <label className="form-label">Username:</label>
           <br />
           <input
             type="text"
@@ -18,11 +18,8 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             placeholder="username"
             required
           />
-        </div>{" "}
-        </div> 
-        <div>
-        <div className="form-group">
-          <label>Password:</label>
+          <div className="form-group">
+        <label className="form-label">Password:</label>
           <br />
           <input
             type="password"
@@ -35,11 +32,13 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
             min="0"
             required
           />
-        </div>
+          </div>
+        </div>{" "}
+        
     {!isLogin ? 
-    <div>
+    <div className="auth-form">
         <div className="form-group">
-          <label>First Name:</label>
+        <label className="form-label">First Name:</label>
           <br />
           <input
             type="text"
@@ -53,7 +52,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Last Name:</label>
+        <label className="form-label">Last Name:</label>
           <br />
           <input
             type="text"
@@ -67,7 +66,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Email:</label>
+        <label className="form-label">Email:</label>
           <br />
           <input
             type="email"
@@ -81,7 +80,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>{" "}
         <div className="form-group">
-          <label>Phone Number:</label>
+        <label className="form-label">Phone Number:</label>
           <br />
           <input
             type="phoneNumber"
@@ -96,7 +95,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>University:</label>
+        <label className="form-label">University:</label>
           <br />
           <input
             type="university"
@@ -111,7 +110,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Major:</label>
+        <label className="form-label">Major:</label>
           <br />
           <input
             type="major"
@@ -126,7 +125,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Classes you can help with:</label>
+        <label className="form-label">Classes you can help with:</label>
           <br />
           <input
             type="canHelp"
@@ -141,7 +140,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
           />
         </div>
         <div className="form-group">
-          <label>Classes you need help with:</label>
+        <label className="form-label">Classes you need help with:</label>
           <br />
           <input
             type="needHelp"

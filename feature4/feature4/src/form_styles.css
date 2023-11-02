@@ -1,0 +1,36 @@
+/* form_styles.css */
+
+/* Styles for the form */
+.auth-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    
+  }
+  
+  /* Styles for form labels */
+  .auth-form label {
+    font-weight: bold;
+  }
+  
+  /* Styles for form input fields */
+  .auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Styles for submit button */
+  .auth-form button {
+    background-color: #2d5b38;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: auto;
+  }
+  
+  /* Additional styles as per your requirement */
