@@ -47,3 +47,9 @@ All notable changes to this project will be documented in this file.
 ### Removed
 
 - N/A as of 11/02/23
+
+### Added
+- form_styles.css as of 11/02/23
+
+### Edited
+- AuthForm.js as of 11/02/23
