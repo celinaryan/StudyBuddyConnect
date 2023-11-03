@@ -10,7 +10,14 @@ const AuthRegister = () => {
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
+    password: "",
+    username: "",
+    phoneNumber: "",
+    university: "",
+    major: "",
+    canHelp: "",
+    needHelp: ""
+
   });
 
   // flags in the state to watch for add/remove updates
