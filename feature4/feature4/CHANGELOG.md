@@ -53,3 +53,12 @@ All notable changes to this project will be documented in this file.
 
 ### Edited
 - AuthForm.js as of 11/02/23
+
+### Edited 11/03/23
+    modified:   src/Components/Auth/AuthForm.js
+    modified:   src/Components/Auth/AuthLogin.js
+    modified:   src/Components/Auth/AuthRegister.js
+    modified:   src/Components/Auth/AuthService.js
+    modified:   src/Components/Header/Header.js
+    modified:   src/form_styles.css
+    modified:   src/index.css

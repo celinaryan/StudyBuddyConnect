@@ -4,15 +4,17 @@
 .auth-form {
     margin-top: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
   }
   
   /* Styles for form labels */
   .auth-form label {
     font-weight: bold;
+    
   }
-  
+
   /* Styles for form input fields */
   .auth-form input {
     width: 100%;
