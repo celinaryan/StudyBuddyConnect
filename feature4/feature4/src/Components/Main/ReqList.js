@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAllRequests, getUserById, getClassById } from "../../Services/RequestService";
-
+import "../../index.css"
 const ReqList = () => {
   const [reqs, setReqs] = useState([]);
 
@@ -35,9 +35,9 @@ const ReqList = () => {
   }, []);
 
   return (
-    <div>
-      <hr />
-      Requests in the Database:
+    <div className="noncentered-body">
+      
+      <h2>Requests in the Database:</h2>
       <div>
         <p>Requests:</p>
         {reqs.length > 0 ? (
@@ -52,6 +52,7 @@ const ReqList = () => {
           <p>No requests available.</p>
         )}
       </div>
+      <p>Matches coming soon...</p>
     </div>
   );
 };

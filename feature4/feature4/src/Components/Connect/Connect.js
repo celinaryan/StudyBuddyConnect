@@ -29,7 +29,6 @@ import { getAllRequests, Requests} from "../../Services/RequestService";
         </div>
         <div className="db-list">
         <ReqList reqs={reqs} />
-        <p> Matches coming soon.... </p>
         </div>
         
       </section>

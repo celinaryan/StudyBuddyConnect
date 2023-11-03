@@ -1,5 +1,6 @@
 import studentImg from '../images/studentsStudying.jpeg';
 import MainList from '../Main/MainList';
+import "../../index.css"
 
 export default function Home() {
     return (

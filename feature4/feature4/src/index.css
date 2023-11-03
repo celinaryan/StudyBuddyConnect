@@ -28,7 +28,9 @@ code {
   color: white;
   border: none;
 }
-
+.noncentered-body{
+  padding: 25px;
+}
 /* Additional styles for hover and active states */
 .btn:hover {
   /* Add hover styles */
