@@ -62,3 +62,4 @@ All notable changes to this project will be documented in this file.
     modified:   src/Components/Header/Header.js
     modified:   src/form_styles.css
     modified:   src/index.css
+    -- for Feature 5, added CSS styling to AuthForms, added log out button to NavBar (Header.js), fixed some User logic when registering/logging in...
