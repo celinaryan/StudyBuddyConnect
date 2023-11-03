@@ -58,3 +58,21 @@ code {
   /* Add styles to the last list item */
   margin-right: 0; /* Remove right margin for the last item */
 }
+.home-login-options{
+  margin-top: 30px;
+}
+.home-login-options a:link,
+.home-login-options a:visited
+{
+  color: #5cb68f; 
+  font-weight: bold; 
+  text-decoration: none;
+}
+
+
+.home-login-options a:hover,
+.home-login-options a:active{
+  color: #5e9f83; 
+  font-weight: bold; 
+  text-decoration: none;
+}

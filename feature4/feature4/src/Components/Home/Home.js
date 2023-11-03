@@ -1,8 +1,20 @@
 import studentImg from '../images/studentsStudying.jpeg';
 import MainList from '../Main/MainList';
+import React, { useEffect, useState } from "react";
 import "../../index.css"
+import { checkUser } from "../Auth/AuthService";
+const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const userAuthenticated = checkUser();
+    setIsLoggedIn(userAuthenticated);
+  }, []);
 
-export default function Home() {
+  useEffect(() => {
+    const userAuthenticated = checkUser();
+    setIsLoggedIn(userAuthenticated);
+  }, [isLoggedIn]);
+
     return (
       <section>
         <div className="centerText">
@@ -12,11 +24,16 @@ export default function Home() {
       
        
       <img src={studentImg} alt="students studying" width={400} />
+      {!isLoggedIn ? (
+        <div className="home-login-options">
+          <p>New to Study Buddy Connect? <a href="/auth/register">Register Here.</a></p>
+          <p>Already a member? <a href="/auth/login">Login Here.</a></p>
+          </div>
+            ) : null}
       </div>
-      
     
-      
-        <MainList/>
-        </section>
+      <MainList/>
+      </section>
     );
-  }
+  };
+  export default Home;

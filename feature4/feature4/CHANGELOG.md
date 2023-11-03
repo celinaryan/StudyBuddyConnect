@@ -73,3 +73,7 @@ All notable changes to this project will be documented in this file.
         modified:   src/form_styles.css
         modified:   src/index.css
     -- removed lines between components and also added some padding... 
+### Edited 11/03/23
+        modified:   src/Components/Home/Home.js
+        modified:   src/index.css
+    -- added register and login links on home page
