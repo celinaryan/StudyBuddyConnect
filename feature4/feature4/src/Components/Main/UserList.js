@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllUsers, Users } from "../../Services/UserService";
-
+import "../../index.css"
 /* STATEFUL PARENT COMPONENT */
 const UserList = () => {
   const [users, setUsers] = useState([]);
@@ -17,8 +17,7 @@ const UserList = () => {
   }, []);
 
   return (
-    <div>
-      <hr />
+    <div className="noncentered-body">
       Users in the Database:
       <div>
         <p> Users: </p>

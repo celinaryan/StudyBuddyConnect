@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { checkUser, loginUser } from "./AuthService";
 import AuthForm from "./AuthForm";
 import { useNavigate } from "react-router-dom";
-
 const AuthLogin = () => {
   const navigate = useNavigate();
 
@@ -16,7 +15,7 @@ const AuthLogin = () => {
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
 
-  // each useEffect covers a differnet senario
+  // each useEffect covers a different scenario
   useEffect(() => {
     if (checkUser()) {
       alert("You are already logged in");
@@ -24,28 +23,27 @@ const AuthLogin = () => {
     }
   }, [navigate]);
 
-  // useEffect that run when changes are made to the state variable flags
+  // useEffect that runs when changes are made to the state variable flags
   useEffect(() => {
     if (currentUser && add) {
-      loginUser(currentUser).then((userLoggedIn) => {
-        if (userLoggedIn) {
-          alert(
-            `${userLoggedIn.get("firstName")}, you successfully logged in!`
-          );
-          navigate("/");
-        }
-        // TODO: redirect user to main app
-        setAdd(false);
-      });
+      loginUser(currentUser)
+        .then((userLoggedIn) => {
+          if (userLoggedIn) {
+            alert(`${userLoggedIn.get("firstName")}, you successfully logged in!`);
+            navigate("/");
+          }
+          // TODO: redirect user to main app
+          setAdd(false);
+        })
+        .catch((error) => {
+          console.log("Login Error: ", error);
+        });
     }
   }, [navigate, currentUser, add]);
 
   const onChangeHandler = (e) => {
     e.preventDefault();
-    console.log(e.target);
     const { name, value: newValue } = e.target;
-    console.log(newValue);
-
     setCurrentUser({
       ...currentUser,
       [name]: newValue
@@ -54,12 +52,12 @@ const AuthLogin = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log("submitted: ", e.target);
     setAdd(true);
   };
 
   return (
     <div>
+      <h2>Login Here</h2>
       <AuthForm
         user={currentUser}
         isLogin={true}

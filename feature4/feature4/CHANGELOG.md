@@ -53,3 +53,27 @@ All notable changes to this project will be documented in this file.
 
 ### Edited
 - AuthForm.js as of 11/02/23
+
+### Edited 11/03/23
+    modified:   src/Components/Auth/AuthForm.js
+    modified:   src/Components/Auth/AuthLogin.js
+    modified:   src/Components/Auth/AuthRegister.js
+    modified:   src/Components/Auth/AuthService.js
+    modified:   src/Components/Header/Header.js
+    modified:   src/form_styles.css
+    modified:   src/index.css
+    -- for Feature 5, added CSS styling to AuthForms, added log out button to NavBar (Header.js), fixed some User logic when registering/logging in...
+
+### Edited 11/03/23
+        modified:   src/Components/Connect/Connect.js
+        modified:   src/Components/Home/Home.js
+        modified:   src/Components/Main/MainList.js
+        modified:   src/Components/Main/ReqList.js
+        modified:   src/Components/Main/UserList.js
+        modified:   src/form_styles.css
+        modified:   src/index.css
+    -- removed lines between components and also added some padding... 
+### Edited 11/03/23
+        modified:   src/Components/Home/Home.js
+        modified:   src/index.css
+    -- added register and login links on home page

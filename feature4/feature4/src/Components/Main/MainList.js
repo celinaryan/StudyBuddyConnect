@@ -18,8 +18,8 @@ const MainList = () => {
   }, []);
 
   return (
-    <div>
-      <hr />
+    <div className="noncentered-body">
+      
       <h2>Classes you can find a buddy for:</h2>
       <div>
         <p> Don't see the class you need help with? You can always add a new one! </p>
