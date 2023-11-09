@@ -23,7 +23,7 @@ const Home = () => {
       for academic success. </p>
       
        
-      <img src={studentImg} alt="students studying" width={400} />
+      <img src={studentImg} alt="students studying" width={900} />
       {!isLoggedIn ? (
         <div className="home-login-options">
           <p>New to Study Buddy Connect? <a href="/auth/register">Register Here.</a></p>
