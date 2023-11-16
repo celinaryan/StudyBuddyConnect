@@ -13,7 +13,8 @@
   }
 }
 
-.App-header {
+/* .App-header {
+  background: url('./Components/images/pinterest pic.jpeg') center/cover; 
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -22,7 +23,19 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  overflow: hidden;
 }
+
 
 .App-link {
   color: #61dafb;
@@ -70,10 +83,10 @@ input[type="password"] {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  background-color: #59935b;
+  background-color: rgba(97, 76, 57);;
   padding: 10px;
   color: white;
-  border: 1px solid #59935b;
+  border: 1px solid rgba(97, 76, 57);;
   border-radius: 3px;
   font-size: 1em;
   font-weight: bold;
@@ -90,10 +103,10 @@ input[type="submit"] {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
-  background-color: #356e37;
+  background-color: rgba(131, 105, 83);
   padding: 10px;
   color: white;
-  border: 1px solid #356e37;
+  border: 1px solid rgba(131, 105, 83);
   border-radius: 3px;
   font-size: 1em;
   font-weight: bold;
@@ -204,4 +217,8 @@ img {
 .centerText p {
   font-size: 1.5em; /* Adjust the font size as needed */
   margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.home-page .centerText {
+  color: white; /* Set the font color to white */
 }

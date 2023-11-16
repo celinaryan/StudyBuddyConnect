@@ -1,4 +1,3 @@
-import studentImg from '../images/pinterest pic.jpeg';
 import MainList from '../Main/MainList';
 import React, { useEffect, useState } from "react";
 import "../../index.css"
@@ -15,15 +14,24 @@ const Home = () => {
     setIsLoggedIn(userAuthenticated);
   }, [isLoggedIn]);
 
+    // Add the home-background class to the body element
+    useEffect(() => {
+      document.body.classList.add("home-background");
+  
+      // Remove the class when the component is unmounted
+      return () => {
+        document.body.classList.remove("home-background");
+      };
+    }, []);
+
     return (
-      <section>
+      <section className="home-page">
         <div className="centerText">
-        <h1> Study Buddy Connect </h1>
-        <p>Empowering college students through collaborative learning and connections
-      for academic success. </p>
+        <h1> study buddy connect </h1>
+        <p>empowering college students through collaborative learning and connections
+      for academic success </p>
       
        
-      <img src={studentImg} alt="students studying" width={900} />
       {!isLoggedIn ? (
         <div className="home-login-options">
           <p>New to Study Buddy Connect? <a href="/auth/register">Register Here.</a></p>
