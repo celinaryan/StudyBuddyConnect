@@ -102,8 +102,9 @@ input[type="submit"] {
   position: relative;
   top: 0;
 }
+
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Arapey', serif; 
   color: rgba(0, 0, 0, 0.8);
   font-weight: 400;
   line-height: 1.58;
@@ -112,6 +113,13 @@ body {
   margin: 0;
   color: rgba(5, 74, 22);
 }
+
+@font-face {
+  font-family: 'Arapey';
+  src: url('https://fonts.googleapis.com/css2?family=Arapey&family=Montserrat&display=swap') format('woff');
+}
+
+
 .main {
   padding: 70px;
 }
@@ -184,5 +192,16 @@ img {
 }
 
 .centerText {
-  padding: 70px;
+  text-align: center;
+  padding: 70px; /* Adjust padding as needed */
+}
+
+.centerText h1 {
+  font-size: 3em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+.centerText p {
+  font-size: 1.5em; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Adjust margin as needed */
 }

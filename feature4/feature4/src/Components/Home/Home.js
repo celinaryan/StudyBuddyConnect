@@ -18,8 +18,8 @@ const Home = () => {
     return (
       <section>
         <div className="centerText">
-        <h1> Welcome to Study Buddy Connect! </h1>
-        <p> Empowering college students through collaborative learning and connections
+        <h1> Study Buddy Connect </h1>
+        <p>Empowering college students through collaborative learning and connections
       for academic success. </p>
       
        
