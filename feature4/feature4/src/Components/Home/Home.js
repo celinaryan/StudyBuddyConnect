@@ -1,4 +1,4 @@
-import studentImg from '../images/overhead pic of studying.webp';
+import studentImg from '../images/pinterest pic.jpeg';
 import MainList from '../Main/MainList';
 import React, { useEffect, useState } from "react";
 import "../../index.css"

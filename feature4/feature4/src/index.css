@@ -64,7 +64,7 @@ code {
 .home-login-options a:link,
 .home-login-options a:visited
 {
-  color: #5cb68f; 
+  color: rgba(97, 76, 57); 
   font-weight: bold; 
   text-decoration: none;
 }
@@ -72,7 +72,7 @@ code {
 
 .home-login-options a:hover,
 .home-login-options a:active{
-  color: #5e9f83; 
+  color: rgba(131, 105, 83); 
   font-weight: bold; 
   text-decoration: none;
 }

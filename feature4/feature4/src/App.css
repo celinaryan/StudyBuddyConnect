@@ -111,7 +111,7 @@ body {
   letter-spacing: -0.003em;
   font-size: 20px;
   margin: 0;
-  color: rgba(5, 74, 22);
+  color: rgba(97, 76, 57);
 }
 
 @font-face {
@@ -132,7 +132,7 @@ body {
   /*flex-end*/
   list-style: none;
   margin: 0;
-  background: rgba(8, 128, 38);
+  background: rgba(131, 105, 83)
 }
 
 .navigation a {
@@ -155,7 +155,7 @@ img {
   max-height:100%;
   }
 .navigation a:hover {
-  background: rgba(5, 74, 22);
+  background: rgba(97, 76, 57);
 }
 
 /* media query styles are only applied if the conditions are met */
