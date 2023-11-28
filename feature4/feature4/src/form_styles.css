@@ -55,16 +55,17 @@
 
   /* Styles for submit button */
   .auth-form button , .course-form button{
-    background-color: #2d5b38;
+    background-color: rgba(97, 76, 57);
     color: #fff;
     padding: 10px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
     margin: auto;
     display: block;
     width: auto;
     margin: 0 auto;
   }
+
   
   /* Additional styles as per your requirement */
