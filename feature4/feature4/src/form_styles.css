@@ -9,24 +9,52 @@
     flex-direction: column;
     
   }
-  
+  .course-form {
+    width: 100%;  /* Fixed width. Use percentage if you want a responsive design */
+    margin: 0 auto;  /* Right and left auto margins will center the form */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   /* Styles for form labels */
-  .auth-form label {
+  .auth-form label, .course-form label {
     font-weight: bold;
     
   }
 
+  .course-form label {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+  }
+
   /* Styles for form input fields */
-  .auth-form input {
-    width: 100%;
+  .auth-form input{
+    width: 70%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
   }
-  
+
+.course-form input{
+    width: 70%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .form-group select {
+    display: block;
+    width: 70%; /* Adjust width as per your requirement */
+    margin: 0 auto;
+    font-family: 'Arapey', serif; 
+  }
+
   /* Styles for submit button */
-  .auth-form button {
+  .auth-form button , .course-form button{
     background-color: #2d5b38;
     color: #fff;
     padding: 10px 20px;
@@ -34,6 +62,9 @@
     border-radius: 3px;
     cursor: pointer;
     margin: auto;
+    display: block;
+    width: auto;
+    margin: 0 auto;
   }
   
   /* Additional styles as per your requirement */

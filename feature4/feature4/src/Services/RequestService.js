@@ -1,56 +1,56 @@
-import Parse from "parse";
+import Parse from 'parse';
 
-export const getAllRequests = () => {
-    const Request = Parse.Object.extend("Request");
-    const query_req = new Parse.Query(Request);
-    query_req.include("user"); // Include the user object in the query
-    query_req.include("canHelpWith"); // Include the "canHelpWith" pointer column
-    query_req.include("needHelpWith"); // Include the "needHelpWith" pointer column
-  
-    return query_req.find().then(async (results) => {
-      console.log("Requests in the Database:");
-      console.log("Requests:");
-  
-      for (let i = 0; i < results.length; i++) {
-        const request = results[i];
-        const user = request.get("user");
-        const canHelpWith = request.get("canHelpWith");
-        const needHelpWith = request.get("needHelpWith");
-  
-        const userName = user ? user.get("firstName") : "Unknown";
-        const canHelpWithClassName = canHelpWith ? canHelpWith.get("className") : "Unknown";
-        const needHelpWithClassName = needHelpWith ? needHelpWith.get("className") : "Unknown";
-  
-        console.log("Request ID: ", request.id);
-        console.log("User First Name: ", userName);
-        console.log("Can Help With Class: ", canHelpWithClassName);
-        console.log("Need Help With Class: ", needHelpWithClassName);
-      }
-  
-      return results;
-    });
-  };
-  
+export const addRequest = async(request) => {
+    const Request = Parse.Object.extend('Request');
+    const query = new Parse.Query(Request);
 
-export const getUserById = (objectId) => {
-  const User = Parse.Object.extend("User");
-  const query_user = new Parse.Query(User);
-  return query_user.get(objectId).then((user) => {
-    console.log("user: ", user);
-    // returns User object
-    return user;
-  });
-};
+    // CanHelpWith and NeedHelpWith are Pointers, so we have to make sure  
+    // to retrieve the Course instance from the Classes table to set them.
+    const CanHelp = Parse.Object.extend('Classes');
+    const canHelpQuery = new Parse.Query(CanHelp);
+    canHelpQuery.equalTo("ClassName", request.canHelp);
 
-export const getClassById = (objectId) => {
-  const Classes = Parse.Object.extend("Classes");
-  const query_class = new Parse.Query(Classes);
-  return query_class.get(objectId).then((classObj) => {
-    console.log("classObj: ", classObj);
-    // returns Classes object
-    return classObj;
-  });
-};
+    const NeedHelp = Parse.Object.extend('Classes');
+    const needHelpQuery = new Parse.Query(NeedHelp);
+    needHelpQuery.equalTo("ClassName", request.needHelp);
 
+    // Perform the queries in parallel
+    const [canHelp, needHelp] = await Promise.all([canHelpQuery.first(), needHelpQuery.first()]);
+
+    const newRequest = new Request();
+
+    // Set the values of the Class
+    newRequest.set("canHelpWith", canHelp); // assuming that "canHelpWith" is pointer to "Classes" table
+    newRequest.set("needHelpWith", needHelp); // assuming that "needHelpWith" is pointer to "Classes" table
+
+    try {
+        const result = newRequest.save();
+        // If the save was successful, 'result' will contain the saved Request object
+        console.log('Request saved', result);
+    } catch (error) {
+        console.error('Error while creating Request: ', error);
+    }
+}
+
+export const getAllRequests = async () => {
+  const Request = Parse.Object.extend('Request');
+  const query = new Parse.Query(Request);
+  const requests = await query.find();
+  return requests;
+}
+
+export const getUserById = async(userId) => {
+  const User = Parse.User;
+  const query = new Parse.Query(User);
+  const user = await query.get(userId);
+  return user;
+}
+
+export const getClassById = async(classId) => {
+  const Class = Parse.Object.extend('Classes');
+  const query = new Parse.Query(Class);
+  const classObj = await query.get(classId);
+  return classObj;
+}
 export let Requests = {};
 Requests.collection = [];

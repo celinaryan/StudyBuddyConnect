@@ -47,7 +47,7 @@ export const loginUser = (currUser) => {
 // if parse.user.current() && parse.user.current().authenticated
 export const checkUser = () => {
   const currentUser = Parse.User.current();
-  if (currentUser && currentUser.authenticated) {
+  if (currentUser && currentUser.authenticated()) {
     return true;
   } else {
     return false;

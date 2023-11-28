@@ -27,7 +27,7 @@ const UserList = () => {
             {users.map((user) => (
               <li key={user.id}>
                 {" "}
-                {user.get("firstName").slice(1,-1)} {user.get("lastName").slice(1,-1)}{" | School: "} {user.get("university").slice(1,-1)}{" | Year: "}{user.get("classYear").slice(1,-1)}{" | Major: "} {user.get("major").slice(1,-1)}{" "}
+                {user.get("firstName")} {user.get("lastName")}{" | School: "} {user.get("university")}{" | Year: "}{user.get("classYear")}{" | Major: "} {user.get("major")}{" "}
               </li>
             ))}
           </ul>

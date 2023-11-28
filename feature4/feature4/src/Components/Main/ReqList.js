@@ -44,7 +44,7 @@ const ReqList = () => {
           <ul>
             {reqs.map((req) => (
               <li key={req.id}>
-                {"Request ID: "}{req.id}{" | User Name: "}{req.user.get("firstName").slice(1,-1)}{" "}{req.user.get("lastName").slice(1,-1)}{" | User can help with class: "}{req.canHelpWith.get("ClassName").slice(1,-1)}{" | User needs help with class: "}{req.needHelpWith.get("ClassName").slice(1,-1)}
+                {"Request ID: "}{req.id}{" | User Name: "}{req.user.get("firstName")}{" "}{req.user.get("lastName")}{" | User can help with class: "}{req.canHelpWith.get("ClassName")}{" | User needs help with class: "}{req.needHelpWith.get("ClassName").slice(1,-1)}
               </li>
             ))}
           </ul>
