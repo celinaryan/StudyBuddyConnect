@@ -170,38 +170,7 @@ const AuthForm = ({ user, isLogin, onChange, onSubmit }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label className="form-label">Classes you can help with:</label>
-              <br />
-              <input
-                type="text"
-                className="form-control"
-                id="canHelp-input"
-                value={user.canHelp}
-                onChange={onChange}
-                name="canHelp"
-                placeholder="Classes you can help with"
-                min="0"
-                required
-              />
-            </div>
-            <div className="form-group">
-              <label className="form-label">
-                Classes you need help with:
-              </label>
-              <br />
-              <input
-                type="text"
-                className="form-control"
-                id="needHelp-input"
-                value={user.needHelp}
-                onChange={onChange}
-                name="needHelp"
-                placeholder="Classes you need help with"
-                min="0"
-                required
-              />
-            </div>
+           
           </div>
         </>
       )}
