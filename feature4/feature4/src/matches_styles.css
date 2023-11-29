@@ -17,10 +17,16 @@
     
   }
 
+  @font-face {
+    font-family: 'Arapey';
+    src: url('https://fonts.googleapis.com/css2?family=Arapey&family=Montserrat&display=swap') format('woff');
+  }
+  
+  
   .button-container {
     display: flex;
     justify-content: flex-end;
- 
+    align-self: center;
   }
   
   .match-card-header {

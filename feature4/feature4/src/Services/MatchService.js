@@ -43,7 +43,7 @@ export async function getMatches() {
             const needClass = await classQuery.get(otherUserNeedsHelpWith);
   
             matches.push({
-              otherUser: { id: otherUserId, name: otherUser.get('firstName'), lastname: otherUser.get('lastName') },
+              otherUser: { id: otherUserId, name: otherUser.get('firstName'), lastname: otherUser.get('lastName'), university:  otherUser.get('university'), major:  otherUser.get('major'), year:  otherUser.get('classYear')},
               canHelpClass: canHelpWith.includes(otherUserNeedsHelpWith) ? { id: otherUserNeedsHelpWith, name: helpClass.get('ClassName') } : null,
               needHelpClass: needHelpWith.includes(otherUserCanHelpWith) ? { id: otherUserCanHelpWith, name: needClass.get('ClassName') } : null,
             });
