@@ -26,12 +26,19 @@ const Components = () => {
         <Route path="/" element={<Home />} />
         <Route path="/auth/login" element={<AuthLogin />} />
         <Route path="/auth/register" element={<AuthRegister />} />
-        <Route path="/buddyfinder" element={<Connect />} />
-        <Route path="/buddychatroom" element={<YourMatches />} />
         <Route path="/auth" element={<AuthModule />} />
         <Route
+          path="/buddyfinder"
+          element={<ProtectedRoute><Connect /></ProtectedRoute>}
+        />
+        <Route
+          path="/buddychatroom"
+          element={<ProtectedRoute><YourMatches /></ProtectedRoute>}
+        />
+
+        <Route
           path="/"
-          element={<ProtectedRoute path="/" element={MainList} />}
+          element={<ProtectedRoute><MainList /></ProtectedRoute>}
         />
         <Route path="*" element={<Navigate to="/auth" replace />} />
       </Routes>
@@ -40,3 +47,4 @@ const Components = () => {
 };
 
 export default Components;
+
