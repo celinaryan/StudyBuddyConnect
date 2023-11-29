@@ -150,5 +150,10 @@ All notable changes to this project will be documented in this file.
         modified:   src/Services/RequestService.js
         modified:   src/form_styles.css
         modified:   src/index.css
-        
+
         enhanced connect page -- can add a class to the database now, setting up so we can create requests that contain a user pointer and arrays of class pointers...
+
+### EDITED NOV 29 -- made it work for request.... only one class selection though
+        modified:   src/Components/Connect/CourseForm.js
+        modified:   src/Components/ProtectedRoute/ProtectedRoute.js
+        modified:   src/Services/RequestService.js

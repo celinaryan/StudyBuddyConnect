@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getCourses, addClass } from '../../Services/CourseService';
+import { addRequest, initialSave } from '../../Services/RequestService';
 import Parse from 'parse';
 import "../../form_styles.css";
 const CourseForm = ({ user, setUser, onChange }) => {
@@ -7,6 +8,9 @@ const CourseForm = ({ user, setUser, onChange }) => {
     const [newClass, setNewClass] = useState('');
 
     useEffect(() => {
+        const classId = 'yourClassIdHere'; // replace with an actual classId
+        const user = Parse.User.current(); // get the current logged-in user
+        initialSave(classId, user);  
         getCourses() 
             .then(classes => setClasses(classes))
             .catch(error => console.error(error));
@@ -30,73 +34,61 @@ const CourseForm = ({ user, setUser, onChange }) => {
         }
     };
 
-    const addRequest = async (user) => {
-        const Req = Parse.Object.extend('Request');
-        const req = new Req();
-    
-        req.set('user', user);
-        req.set('canHelpWith', user.canHelp);
-        req.set('needHelpWith', user.needHelp);
-    
-        try {
-            const response = await req.save();
-            // Access the newly created object
-            console.log('Request created', response);
-            return response;
-        } catch (error) {
-            console.error('Error while creating Request: ', error);
-            throw error;
-        }
+    const onChangeSingle = (event) => {
+        // Handles change for a single select dropdown
+        setUser({ ...user, [event.target.name]: event.target.value });
     }
 
-    const onChangeMulti = (event) => {
-        const selected = Array.from(event.target.options)
-                    .filter(option => option.selected)
-                    .map(option => option.value);
-    
-        setUser({ ...user, canHelp: selected });
-    }
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
+        event.preventDefault();
+        if (!user || !user.canHelp || !user.needHelp) {
+          console.error('User or canHelp/needHelp is not defined');
+          return;
+        }
         console.log("Form Submitted");
-    
+        console.log('user.canHelp', user.canHelp);
+        console.log('user.needHelp', user.needHelp);
         // API call or function call to send `user` data to the server
-        addRequest(user)
-            .then(response => {
-                console.log('User request created', response);
-            })
-            .catch(error => {
-                console.error('Error while creating User request: ', error);
-            });
+        const parseUser = Parse.User.current();
+        const userPointer = new Parse.User();
+        userPointer.id = parseUser.id;
+       
+        try {
+            const response = await addRequest(user.canHelp, user.needHelp, userPointer); 
+            console.log('User request created', response);
+          } catch(error) {
+            console.error('Error while creating User request: ', error);
+            console.log('userPointer', userPointer);
+            console.log('user.canHelp', user.canHelp);
+            console.log('user.needHelp', user.needHelp);
+          }
     }
     
     return (
+        
        <div className="course-form">
-            <form onSubmit={addRequest}>
-            <div className="form-group">
-                <label className="form-label">Classes you can help with:</label>
-                <select id="canHelp-input" name="canHelp" onChange={onChangeMulti} value={user.canHelp} multiple>
-                    <option value="">-Select Multiple-</option>
-                    {
-                        classes.map((course, index) => <option key={index} value={course.id}>{course.name}</option>)
-                    }
-                </select>
+        <h3>Fill out the form below to find a study buddy:</h3>
+      
+            <form onSubmit={handleSubmit}>
+           <div className="form-group">
+            <label className="form-label">Select a class you can help with:</label>
+            <select id="canHelp-input" name="canHelp" onChange={onChangeSingle} value={user.canHelp}>
+                <option value="">-Select One-</option>
+                { classes.map((course) => <option key={course.id} value={course.id}>{course.name}</option> )}
+            </select>
             </div>
             <div className="form-group">
-                <label className="form-label">Classes you need help with:</label>
-                <select id="needHelp-input" name="needHelp" onChange={onChangeMulti} value={user.needHelp} multiple>
-                    <option value="">-Select Multiple-</option>
-                    {
-                        classes.map((course, index) => <option key={index} value={course.id}>{course.name}</option>)
-                    }
+                <label className="form-label">Select a class you need help with:</label>
+                <select id="needHelp-input" name="needHelp" onChange={onChangeSingle} value={user.needHelp}>
+                    <option value="">-Select One-</option>
+                    { classes.map((course) => <option key={course.id} value={course.id}>{course.name}</option> )}
                 </select>
             </div>
             <button type="submit" className="btn btn-primary"> Make Request </button>
             </form>
-        <p> <b>Don't see the class you need?</b></p>
+        <h3>Don't see the class you need? Fill out this form:</h3>
         <div className="form-group">
-       
-        
         <form onSubmit={handleAddClass}>
         <label className="form-label">Add a Class:</label>
         <input type="text" id="newClass" value={newClass} onChange={(e) => setNewClass(e.target.value)} />

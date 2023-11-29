@@ -30,15 +30,16 @@ import { checkUser } from "../Auth/AuthService";
 const ProtectedRoute = ({ children }) => {
   const navigate = useNavigate();
   const goBackHandler = () => {
-    navigate("/auth");
+    navigate("/");
   };
 
   if (checkUser()) {
     return children;
   } else {
     return (
-      <div>
-        <p>Unauthorized!</p>{" "}<button onClick={goBackHandler}>Go Back.</button>
+      <div className="course-form">
+        <p>Unauthorized!</p>{" "}
+        <button type="submit" className="btn btn-primary" onClick={goBackHandler}>Go Home</button>
       </div>
     );
   }
