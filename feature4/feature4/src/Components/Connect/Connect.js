@@ -19,7 +19,7 @@ import CourseForm from "./CourseForm.js";
     return (
       <section>
         <div className="centerText">
-        <h1> Connect with other students </h1>
+        <h1>Buddy Finder</h1>
         <p> Fill out the forms below so we can connect you with other students that can help you and you can help! </p>
         </div>
         <div className="db-list">

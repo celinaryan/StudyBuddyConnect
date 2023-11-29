@@ -26,8 +26,8 @@ const Components = () => {
         <Route path="/" element={<Home />} />
         <Route path="/auth/login" element={<AuthLogin />} />
         <Route path="/auth/register" element={<AuthRegister />} />
-        <Route path="/connect" element={<Connect />} />
-        <Route path="/yourmatches" element={<YourMatches />} />
+        <Route path="/buddyfinder" element={<Connect />} />
+        <Route path="/buddychatroom" element={<YourMatches />} />
         <Route path="/auth" element={<AuthModule />} />
         <Route
           path="/"

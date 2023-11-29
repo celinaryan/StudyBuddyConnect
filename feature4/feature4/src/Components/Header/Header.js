@@ -33,10 +33,10 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
                    <li>
-                    <Link to="/connect">Connect</Link>
+                    <Link to="/buddyfinder">Buddy Finder</Link>
                   </li>
                   <li>
-                    <Link to="/yourmatches">Your Matches</Link>
+                    <Link to="/buddychatroom">Buddy Chatroom</Link>
                   </li>
                   <li>
                     <button type="submit" className="btn btn-primary" onClick={handleLogout}>Logout</button>
