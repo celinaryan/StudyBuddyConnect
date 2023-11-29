@@ -22,8 +22,7 @@ const YourMatches = () => {
       <section>
         <div className="centerText">
         <h1> Buddy Chatroom </h1>
-        <p> Chat with other students </p>
-        <p> Display match cards here </p>
+        <p> Look at your matches and chat with other students. </p>
         {matches.map((match, index) => (
         <MatchCard
           key={index}
