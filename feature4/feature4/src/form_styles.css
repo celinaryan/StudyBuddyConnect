@@ -54,18 +54,38 @@
   }
 
   /* Styles for submit button */
-  .auth-form button , .course-form button{
-    background-color: rgba(97, 76, 57);
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin: auto;
-    display: block;
-    width: auto;
-    margin: 0 auto;
-  }
+.auth-form button, 
+.course-form button {
+  background-color: rgba(97, 76, 57);
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-form button:hover,
+.course-form button:hover {
+  background-color: rgba(80, 64, 48); /* Darken the background on hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+
+.auth-form button:active,
+.course-form button:active {
+  transform: scale(0.95); /* Add a slight scale effect on click */
+}
+
+.auth-form button:focus,
+.course-form button:focus {
+  outline: none; /* Remove the default focus outline */
+  box-shadow: 0 0 10px rgba(97, 76, 57, 0.5); /* Add a subtle box shadow on focus */
+}
+
 
   
   /* Additional styles as per your requirement */
