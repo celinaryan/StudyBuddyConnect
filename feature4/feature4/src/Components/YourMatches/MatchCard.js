@@ -1,5 +1,11 @@
 import "./../../matches_styles.css";
+import { useNavigate } from "react-router-dom";
 const MatchCard = ({ user, canHelpClass, needHelpClass }) => {
+    const navigate = useNavigate();
+
+    const handleStartChat = () => {
+      navigate(`/buddychatroom/${user.id}`);
+    }
     if (!user) return <div>Error: User information is not available.</div>;
     return (
         <div className="match-card">
@@ -12,7 +18,9 @@ const MatchCard = ({ user, canHelpClass, needHelpClass }) => {
           {needHelpClass && <h3 className="match-card-class">Needs help with class: {needHelpClass.name}</h3>}
         </div>
         <div className="button-container">
-          <button className="match-card-button">Start Chatting</button>
+        <button className="match-card-button" onClick={() => handleStartChat(user.id)}>
+            Start Chat
+          </button>
         </div>
       </div>
     );

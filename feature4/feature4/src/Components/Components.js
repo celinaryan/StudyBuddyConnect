@@ -1,6 +1,7 @@
 import React from "react";
 // import Main from "./Main/Main.js";
 import Home from "./Home/Home.js";
+import Chat from "./Chat/Chat";
 import Header from "./Header/Header.js";
 //import Login from "./Login/Login.js";
 //import Signup from "./Signup/Signup.js";
@@ -39,6 +40,12 @@ const Components = () => {
         <Route
           path="/"
           element={<ProtectedRoute><MainList /></ProtectedRoute>}
+        />
+        <Route
+          path="/buddychatroom/:userId"
+          element={
+            <ProtectedRoute><Chat /></ProtectedRoute>
+          }
         />
         <Route path="*" element={<Navigate to="/auth" replace />} />
       </Routes>

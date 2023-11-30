@@ -1,0 +1,30 @@
+/* Chat.css file */
+
+
+.chat-box {
+    max-width: 600px;
+    background-color: #b0a499;
+    margin: 40px auto;     /* Adjust the top margin as per your needs */
+  }
+  
+  .chat-window {
+    border: 1px solid black;
+    padding: 10px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column; /* Make children stack vertically */
+    justify-content: space-between; /* Space between chat messages and input */
+  }
+  
+  .chat-input {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .chat-box button{
+    background-color: rgba(97, 76, 57);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
