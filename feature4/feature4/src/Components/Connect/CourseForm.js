@@ -90,14 +90,14 @@ const CourseForm = ({ user, setUser, onChange }) => {
                     { classes.map((course) => <option key={course.id} value={course.id}>{course.name}</option> )}
                 </select>
             </div>
-            <button type="submit" className="btn btn-primary"> Make Request </button>
+            <button type="submit" className="match-card-button"> Make Request </button>
             </form>
         <h3>Don't see the class you need? Fill out this form:</h3>
         <div className="form-group">
         <form onSubmit={handleAddClass}>
         <label className="form-label">Add a Class:</label>
         <input type="text" id="newClass" value={newClass} onChange={(e) => setNewClass(e.target.value)} />
-        <button type="submit" className="btn btn-primary"> Add Class</button>
+        <button type="submit" className="match-card-button"> Add Class</button>
         </form>
     </div>
 </div>

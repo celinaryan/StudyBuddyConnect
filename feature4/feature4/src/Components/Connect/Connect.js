@@ -24,9 +24,14 @@ import CourseForm from "./CourseForm.js";
         </div>
         <div className="db-list">
         <CourseForm courses={courses} user={user} setUser={setUser} onChange={onChange}/>
-        <ReqList reqs={reqs} />
+
         </div>
-        
+        <br>
+        </br>
+        <br>
+        </br>
+        <br>
+        </br>
       </section>
     );
   };

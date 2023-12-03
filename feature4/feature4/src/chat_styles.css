@@ -3,23 +3,48 @@
 
 .chat-box {
     max-width: 600px;
-    background-color: #b0a499;
+    
+    border-radius: 4px;
     margin: 40px auto;     /* Adjust the top margin as per your needs */
   }
-  
+  /*
   .chat-window {
-    border: 1px solid black;
+    border: 1px solid #b0a499;
     padding: 10px;
-    min-height: 300px;
+    height: 400px;    
+    overflow-y: auto; 
+    background-color: #b0a499;
     display: flex;
-    flex-direction: column; /* Make children stack vertically */
-    justify-content: space-between; /* Space between chat messages and input */
+    border-radius: 4px;
+    flex-direction: column; 
+    justify-content: space-between; 
   }
   
-  .chat-input {
-    width: 100%;
-    margin-top: 10px;
+  */
+  .chat-window {
+    position: relative;
+    border: 1px solid #b0a499;
+    padding: 10px;
+    height: 400px; 
+    background-color: #b0a499;
+    display: flex; /* Added this */
+    flex-direction: column; /* Added this */
+    border-radius: 4px;
   }
+
+  .messages-container {
+    overflow-y: auto; /* Added this - To make this scrollable */
+    flex-grow: 1; /* Added this - To make this container grow and take up available space */
+  }
+  
+  .chat-input-form {
+    margin-top: auto; /* Added this - Push the form down */
+    height: 32px;
+    margin-top: 10px;
+    border: 1px solid #b0a499;
+    
+  }
+
   .chat-box button{
     background-color: rgba(97, 76, 57);
     color: #fff;
@@ -27,4 +52,38 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 3px;
   }
+
+.chat-box button:hover {
+  background-color: rgba(80, 64, 48); /* Darken the background on hover */
+  transform: scale(1.05); /* Add a slight scale effect on hover */
+}
+.input-field {
+  width: 80%;
+  border-radius: 4px;
+  cursor:text;
+  border: none;
+  height: 32px;  /* Adjust this value as per your needs */
+}
+
+.message {
+  max-width: 40%;
+  margin: 7px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: left; /* Controls the text alignment in the message */
+}
+.sent {
+  align-self: flex-end !important;
+  background-color: rgba(0, 123, 255, 0.2);
+  color: black;
+}
+
+.received {
+  align-self: flex-start !important;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
+}

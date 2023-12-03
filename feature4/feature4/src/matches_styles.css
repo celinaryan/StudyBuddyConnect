@@ -17,11 +17,6 @@
     
   }
 
-  @font-face {
-    font-family: 'Arapey';
-    src: url('https://fonts.googleapis.com/css2?family=Arapey&family=Montserrat&display=swap') format('woff');
-  }
-  
   
   .button-container {
     display: flex;
@@ -47,3 +42,12 @@
     border-color:  rgba(158, 188, 146, 0.267);
     cursor: pointer;
   }
+  .match-card-button:hover {
+    background-color: rgba(108, 123, 103, 0.267);
+   /* Darken the background on hover */
+    transform: scale(1.05); /* Add a slight scale effect on hover */
+  }
+
+  .match-card-button:active{
+  transform: scale(0.95); /* Add a slight scale effect on click */
+}
