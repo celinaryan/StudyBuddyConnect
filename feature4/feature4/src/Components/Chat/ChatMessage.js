@@ -7,7 +7,7 @@ const auth = firebase.auth();
 function ChatMessage(props) {
     const { text, uid, authorName, timestamp } = props.message;
     const { currentUserId } = props; // currentUserId prop here
-    console.log("uid", uid, "currentUserId", currentUserId);
+    console.log("uid", uid, typeof uid, "currentUserId", currentUserId, typeof currentUserId);
     const messageClass = uid === currentUserId ? 'sent' : 'received';
 
   return (

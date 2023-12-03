@@ -58,6 +58,7 @@ const Chat = () => {
       { user && <h2>Chat with {user.name} {user.lastName}</h2>}
       <div className="chat-window">
   <main className="messages-container"> {/* Added a class here */}
+
   {messages && messages.map(msg => msg ? (<ChatMessage key={msg.id} message={msg} currentUserId={currentUser.id} />) : '')}
       <span ref={dummy}></span>
   </main>
