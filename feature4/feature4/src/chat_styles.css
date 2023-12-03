@@ -68,7 +68,7 @@
 }
 
 .message {
-  max-width: 40%;
+  max-width: 70%;
   margin: 7px;
   padding: 10px;
   border: none;
@@ -76,14 +76,19 @@
   background-color: rgba(255, 255, 255, 0.2);
   text-align: left; /* Controls the text alignment in the message */
 }
+.messages-container {
+  display: grid;
+  overflow-y: auto;
+}
+
 .sent {
-  align-self: flex-end !important;
+  grid-column: 2;
   background-color: rgba(0, 123, 255, 0.2);
   color: black;
 }
 
 .received {
-  align-self: flex-start !important;
+  grid-column: 1;
   background-color: rgba(0, 0, 0, 0.2);
   color: black;
 }
