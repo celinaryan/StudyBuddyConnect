@@ -2,48 +2,37 @@
 
 
 .chat-box {
-    max-width: 600px;
-    
-    border-radius: 4px;
-    margin: 40px auto;     /* Adjust the top margin as per your needs */
-  }
-  /*
-  .chat-window {
-    border: 1px solid #b0a499;
-    padding: 10px;
-    height: 400px;    
-    overflow-y: auto; 
-    background-color: #b0a499;
-    display: flex;
-    border-radius: 4px;
-    flex-direction: column; 
-    justify-content: space-between; 
-  }
-  
-  */
+  max-width: 600px;
+  border-radius: 4px;
+  margin: 40px auto;
+}
+
   .chat-window {
     position: relative;
-    border: 1px solid #b0a499;
+    border: 1px solid #646568;  /* Adjust Border Color */
     padding: 10px;
     height: 400px; 
-    background-color: #b0a499;
-    display: flex; /* Added this */
-    flex-direction: column; /* Added this */
+    background-color: #f2f2f2;  /* Adjust Background Color */
+    display: flex;
+    flex-direction: column;
     border-radius: 4px;
-  }
+}
 
   .messages-container {
     overflow-y: auto; /* Added this - To make this scrollable */
     flex-grow: 1; /* Added this - To make this container grow and take up available space */
   }
-  
-  .chat-input-form {
-    margin-top: auto; /* Added this - Push the form down */
-    height: 32px;
-    margin-top: 10px;
-    border: 1px solid #b0a499;
-    
-  }
+
+
+.chat-box button{
+  background-color: #4b647a;  /* Adjust Background Color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;  /* Add Box Shadow */
+}
 
   .chat-box button{
     background-color: rgba(97, 76, 57);
@@ -59,36 +48,55 @@
   background-color: rgba(80, 64, 48); /* Darken the background on hover */
   transform: scale(1.05); /* Add a slight scale effect on hover */
 }
+
 .input-field {
   width: 80%;
   border-radius: 4px;
   cursor:text;
+  background-color: #f7f7f7;  /* Adjust Background Color */
   border: none;
-  height: 32px;  /* Adjust this value as per your needs */
+  height: 32px;
+}
+
+/* Message receive/send animations -- optional */
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
 }
 
 .message {
+  animation: 0.4s ease-out 0s 1 slideIn; /* Add subtle message slide-in animation */
   max-width: 70%;
   margin: 7px 7px 14px 7px;
   padding: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.2);
-  text-align: left; /* Controls the text alignment in the message */
-}
-.messages-container {
-  display: grid;
-  overflow-y: auto;
+  border-radius: 15px; /* Make the message bubbles more rounded */
+  background-color: #e8e8e8;
+  color: #535353;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.05); /* Add a very subtle shadow to the messages */
 }
 
 .sent {
   grid-column: 2;
-  background-color: rgba(0, 123, 255, 0.2);
-  color: black;
+  background-color: #4b647a; /* Darker color for sent messages */
+  color: white; /* Light text color for contrast */
+  text-align: right; /* Align text to the right */
 }
 
 .received {
   grid-column: 1;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: #d1d1d1; /* Lighter color for received messages */
   color: black;
+  text-align: left; /* Align text to the left */
+}
+
+/* Add a slight hover effect for messages */
+.message:hover {
+  transform: scale(1.02); /* On hover, scale the message slightly */
+  transition: transform 0.2s; /* Make the scaling smooth */
 }
