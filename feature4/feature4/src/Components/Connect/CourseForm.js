@@ -46,7 +46,7 @@ const CourseForm = ({ user, setUser, onChange }) => {
           console.error('User or canHelp/needHelp is not defined');
           return;
         }
-        if(user.canHelp == user.needHelp){
+        if(user.canHelp === user.needHelp){
             window.alert("You cannot submit a request for the same classes!");   
             return; 
         }
