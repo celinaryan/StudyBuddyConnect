@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllLessons, Lessons } from "../../Services/LearnService";
+import { getAllLessons } from "../../Services/LearnService";
 
 /* STATEFUL PARENT COMPONENT */
 const MainList = () => {

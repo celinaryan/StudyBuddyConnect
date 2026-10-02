@@ -1,8 +1,4 @@
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
 import "../../chat_styles.css";
-
-const auth = firebase.auth();
 
 function ChatMessage(props) {
     const { text, uid, authorName, timestamp } = props.message;

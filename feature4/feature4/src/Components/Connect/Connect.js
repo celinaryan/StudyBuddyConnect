@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
-import ReqList from "../Main/ReqList.js";
-import { getAllRequests, Requests} from "../../Services/RequestService";
+import React, { useState } from "react";
 import CourseForm from "./CourseForm.js";
   const Connect = () => {
-    const [reqs, setReqs] = useState([]);
-    const [courses, setCourses] = useState([]);
+    const [courses] = useState([]);
     const [user, setUser] = useState({ canHelp: [], needHelp: [] });
 
     // const data = useFetch("https://jsonplaceholder.typicode.com/todos/");
